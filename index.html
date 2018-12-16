@@ -2,17 +2,28 @@
 <html>
   <head>
     <title>Page Title</title>
-    <script type="module" src="./lit-table.js"></script>
+    <script type="module" src="./built/lit-table.js"></script>
   </head>
   <body>
     <lit-table></lit-table>
     <script>
       function init() {
         table = document.querySelector('lit-table');
-        table.columns = ['firstName', 'lastName'];
+        table.columns = [{
+            propName: 'firstName',
+            header: 'First Name',
+            footer: 'First Name',
+        }, {
+            propName: 'lastName',
+            header: 'Last Name',
+            footer: 'Last Name',
+        }];
         table.items = [{
           firstName: 'Billy',
           lastName: 'Hardy'
+        }, {
+          firstName: 'Jon',
+          lastName: 'Smithers'
         }];
       }
       init();
